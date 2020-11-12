@@ -23,5 +23,5 @@ def my_func(x, y, z):
         return y + z
 
 
-# print(my_func(int(input("Enter x = ")), int(input("Enter y = ")), int(input("Enter y = "))))
+# print(my_func(int(input("Enter x = ")), int(input("Enter y = ")), int(input("Enter z = "))))
 print(f'{my_func(int(-2), int(3), int(5))}')
