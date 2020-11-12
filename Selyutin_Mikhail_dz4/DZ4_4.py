@@ -5,8 +5,23 @@
 # Пример исходного списка: [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11].
 # Результат: [23, 1, 3, 10, 4, 11]
 
+# Вариант 1
+# my_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+#
+# result_list = [el for el in my_list if my_list.count(el) == 1]
+# # O(n^2)
+# print(result_list)
+
+
+# Вариант 2
 my_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+counter = {}
 
-result_list = [i for i in my_list if my_list.count(i) == 1]
-
+for el in my_list:  # O(n)
+    if el in counter:
+        counter[el] += 1
+    else:
+        counter[el] = 1
+print(counter)
+result_list = [el for el in my_list if counter[el] == 1]  # O(n)
 print(result_list)
